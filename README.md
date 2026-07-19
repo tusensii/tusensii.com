@@ -13,6 +13,9 @@ infrastructure. Static HTML/CSS/vanilla JS, no framework.
 - `scripts/build-plates.mjs` — regenerates the plate markup in `birds/index.html` from `data/plates.json`
 - `scripts/version-assets.mjs` — stamps `css/site.css` with a content hash across every page, so a stale cache can never serve old CSS under a URL that looks unchanged
 - `images/plates/` — plate photos
+- `gridwarden/` — built artifact of GridWarden (D&D battle-map → print-ready
+  gridded PDF tool). Source lives in `~/Coding/gridwarden`; to update, run
+  `npm run build` there and copy `dist/*` into `gridwarden/` here.
 
 ## Adding a bird plate
 

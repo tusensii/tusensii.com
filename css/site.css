@@ -133,6 +133,9 @@ footer a:hover{color:var(--field)}
 .panel.birds:hover::before{opacity:.55}
 .panel.birds>*{position:relative;z-index:1}
 .panel.birds .cta{background:var(--paper);color:var(--ink)}
+.panel.birds{border-right:none}
+.panel.gridwarden{grid-column:1/-1;border-right:none;border-top:3px solid var(--rule)}
+.panel.gridwarden .tag{color:var(--field)}
 .panel.birds .cta:hover{background:var(--ink);color:var(--paper)}
 .panel.birds .stamp{border-color:var(--paper);color:var(--paper);transform:rotate(-3deg)}
 
