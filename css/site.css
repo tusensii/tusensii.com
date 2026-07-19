@@ -76,13 +76,27 @@ footer a:hover{color:var(--field)}
   font-family:'Anton',sans-serif;text-transform:uppercase;
   font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:.95;margin:.8rem 0 1.2rem;
 }
-/* one-off badge borrowing The Great Movie Game's own neon-on-void title styling */
-.panel h2.tgmg-title{
-  display:inline-block;
-  background:#000;
-  padding:.2em .35em;
+/* one-off panel borrowing The Great Movie Game's own neon-on-void title styling */
+.panel.tgmg{background:#000;color:var(--paper)}
+.panel.tgmg:hover{
+  background-color:#161616;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23FFFFFF' stroke-width='.6' opacity='.06'/%3E%3C/svg%3E");
 }
+.panel.tgmg .cta{background:var(--paper);color:var(--ink)}
+.panel.tgmg .cta:hover{background:var(--field);color:var(--paper)}
+.panel.tgmg .stamp{border-color:var(--paper);color:var(--paper)}
 .panel h2.tgmg-title span{text-shadow:0 0 8px currentColor,0 0 16px currentColor}
+@keyframes neon-flicker{
+  0%,19%,21%,23%,25%,54%,56%,100%{
+    text-shadow:0 0 7px currentColor,0 0 20px currentColor,0 0 40px currentColor;
+    opacity:1;
+  }
+  20%,24%,55%{text-shadow:none;opacity:.7}
+}
+.tgmg-title .flicker{animation:neon-flicker 4s infinite}
+@media (prefers-reduced-motion:reduce){
+  .tgmg-title .flicker{animation:none}
+}
 .panel p{max-width:44ch;font-size:1.02rem}
 .panel .cta{
   align-self:flex-start;
