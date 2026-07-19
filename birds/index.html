@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TUSENSII — field plates</title>
+<meta name="description" content="Field plates — bird photography from Puget Sound and Honshu, photographed patiently and catalogued properly.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TUSENSII — field plates">
+<meta property="og:description" content="Field plates — bird photography from Puget Sound and Honshu, photographed patiently and catalogued properly.">
+<meta property="og:image" content="https://tusensii.com/images/og-default.png">
+<meta property="og:url" content="https://tusensii.com/birds/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header>
+    <a class="mark" href="/">TUSENSII</a>
+    <nav>
+      <a href="/">Work</a>
+      <a class="here" href="/birds/">Birds</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+
+  <section class="masthead">
+    <h1>Field <span>Plates</span></h1>
+    <div class="deck">
+      <span>Vol. I — Puget Sound &amp; Honshu</span>
+      <span>Photographed patiently. Captioned like a museum, because the art history degree insists.</span>
+      <span>2024–2026</span>
+    </div>
+  </section>
+
+<!-- PLATES:START -->
+  <article class="plate">
+    <figure>
+      <div class="photo"><em>Cedar waxwing stripping a crab apple</em></div>
+    </figure>
+    <div class="caption">
+      <div class="plate-no">PLATE I</div>
+      <h2>Cedar<br>Waxwing</h2>
+      <div class="binomial">Bombycilla cedrorum</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Union Bay Natural Area, Seattle</dd></div>
+        <div><dt>Season</dt><dd>Late winter</dd></div>
+        <div><dt>Behavior</dt><dd>Stripping a crab apple, methodically</dd></div>
+      </dl>
+      <p class="remark">The mask makes every waxwing look like it knows something you don't. <strong>This one did:</strong> the fruit two branches over was better.</p>
+    </div>
+  </article>
+
+  <article class="plate">
+    <figure>
+      <div class="photo"><em>Japanese cormorant drying its wings</em></div>
+    </figure>
+    <div class="caption">
+      <div class="plate-no">PLATE II</div>
+      <h2>Japanese<br>Cormorant</h2>
+      <div class="binomial">Phalacrocorax capillatus</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Enoshima, Kanagawa</dd></div>
+        <div><dt>Season</dt><dd>Spring</dd></div>
+        <div><dt>Behavior</dt><dd>Wings spread to the sea wind</dd></div>
+      </dl>
+      <p class="remark">An ID argued over lunch and settled by gular skin. <strong>The best souvenir</strong> from that trip weighs nothing.</p>
+    </div>
+  </article>
+
+  <div class="band">
+    <span>MORE PLATES AS THE LIST GROWS</span>
+    <span>NISQUALLY · DISCOVERY PARK · GRANITE MTN</span>
+  </div>
+
+  <article class="plate">
+    <figure>
+      <div class="photo"><em>Great blue heron standing still in shallow water</em></div>
+    </figure>
+    <div class="caption">
+      <div class="plate-no">PLATE III</div>
+      <h2>Great<br>Blue Heron</h2>
+      <div class="binomial">Ardea herodias</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Nisqually National Wildlife Refuge</dd></div>
+        <div><dt>Season</dt><dd>Autumn</dd></div>
+        <div><dt>Behavior</dt><dd>Hunting; patience as a verb</dd></div>
+      </dl>
+      <p class="remark">Forty minutes without moving, then one strike. <strong>Herons understand something about attention</strong> that I keep trying to learn.</p>
+    </div>
+  </article>
+<!-- PLATES:END -->
+
+  <footer>
+    <span>All photographs © Christopher</span>
+    <a href="/">← Back to work</a>
+  </footer>
+
+<script>
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.plate').forEach(p=>io.observe(p));
+</script>
+</body>
+</html>
