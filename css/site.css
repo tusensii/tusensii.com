@@ -47,7 +47,7 @@ footer a:hover{color:var(--field)}
   font-size:clamp(2.75rem,10.5vw,8.5rem);line-height:1;letter-spacing:-.01em;
   padding:5vh 2vw 1.4vh;
   text-transform:uppercase;
-  display:flex;align-items:center;gap:.1em;
+  display:flex;align-items:center;justify-content:center;gap:.1em;
   white-space:nowrap;
 }
 .hero h1 .star{width:1.05em;height:1.05em;flex-shrink:0;fill:var(--field);transform:translateY(.02em)}
