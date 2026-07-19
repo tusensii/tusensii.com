@@ -44,11 +44,13 @@ footer a:hover{color:var(--field)}
 .hero{border-bottom:3px solid var(--rule);overflow:hidden}
 .hero h1{
   font-family:'Anton',sans-serif;
-  font-size:20.5vw;line-height:.86;letter-spacing:-.01em;
+  font-size:clamp(2.75rem,10.5vw,8.5rem);line-height:1;letter-spacing:-.01em;
   padding:5vh 2vw 1.4vh;
   text-transform:uppercase;
+  display:flex;align-items:center;gap:.1em;
+  white-space:nowrap;
 }
-.hero h1 .row2{display:block;color:var(--field);-webkit-text-stroke:0;padding-left:12vw}
+.hero h1 .star{width:1.05em;height:1.05em;flex-shrink:0;fill:var(--field);transform:translateY(.02em)}
 .hero-strip{
   border-top:3px solid var(--rule);
   display:flex;gap:3rem;white-space:nowrap;overflow:hidden;
@@ -103,7 +105,6 @@ footer a:hover{color:var(--field)}
   .board{grid-template-columns:1fr}
   .panel{border-right:none;border-bottom:3px solid var(--rule)}
   .panel:last-child{border-bottom:none}
-  .hero h1{font-size:23vw}
 }
 @media (prefers-reduced-motion:reduce){
   .hero-strip .track{animation:none}

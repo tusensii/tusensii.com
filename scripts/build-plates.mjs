@@ -15,7 +15,7 @@ function plateMarkup(p, i) {
       ${figure}
     </figure>
     <div class="caption">
-      <div class="plate-no">PLATE ${roman[i] ?? i + 1}</div>
+      <div class="plate-no">No. ${roman[i] ?? i + 1}</div>
       <h2>${p.species.replace(' ', '<br>')}</h2>
       <div class="binomial">${p.binomial}</div>
       <dl class="specs">
@@ -29,7 +29,7 @@ function plateMarkup(p, i) {
 }
 
 const band = `  <div class="band">
-    <span>MORE PLATES AS THE LIST GROWS</span>
+    <span>MORE BIRDS AS THE LIST GROWS</span>
     <span>NISQUALLY · DISCOVERY PARK · GRANITE MTN</span>
   </div>`;
 
