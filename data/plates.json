@@ -48,5 +48,45 @@
     "season": "Summer",
     "behavior": "Foraging at the path's edge, out of the reeds for once",
     "remark": "Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds."
+  },
+  {
+    "image": "/images/plates/song-sparrow-cattails.jpg",
+    "alt": "Song sparrow perched on a cattail",
+    "species": "Song Sparrow",
+    "binomial": "Melospiza melodia",
+    "locality": "Nisqually National Wildlife Refuge",
+    "season": "Late spring",
+    "behavior": "Perched on a cattail, surveying the marsh",
+    "remark": "Common enough to overlook. <strong>Worth not overlooking.</strong>"
+  },
+  {
+    "image": "/images/plates/song-sparrow-singing.jpg",
+    "alt": "Song sparrow singing from a bare branch against blue sky",
+    "species": "Song Sparrow",
+    "binomial": "Melospiza melodia",
+    "locality": "Discovery Park, Seattle",
+    "season": "Late spring",
+    "behavior": "Singing from a bare branch",
+    "remark": "The song is <strong>the actual field mark</strong> — a few clear notes, then a buzzy trill."
+  },
+  {
+    "image": "/images/plates/american-crow.jpg",
+    "alt": "American crow perched in a conifer",
+    "species": "American Crow",
+    "binomial": "Corvus brachyrhynchos",
+    "locality": "Discovery Park, Seattle",
+    "season": "Late spring",
+    "behavior": "Watching from a conifer, unbothered",
+    "remark": "Everywhere, all the time. <strong>Still worth a plate.</strong>"
+  },
+  {
+    "image": "/images/plates/tree-swallow.jpg",
+    "alt": "Tree swallow perched at the entrance of a gourd nest box",
+    "species": "Tree Swallow",
+    "binomial": "Tachycineta bicolor",
+    "locality": "Union Bay Natural Area, Seattle",
+    "season": "Summer",
+    "behavior": "Guarding the entrance to a gourd nest box",
+    "remark": "The <strong>blue-green back</strong> only shows in the right light — otherwise it reads as black."
   }
 ]

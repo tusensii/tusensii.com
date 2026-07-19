@@ -119,11 +119,19 @@ footer a:hover{color:var(--field)}
   border:2px solid var(--ink);padding:.3rem .7rem;
   transform:rotate(4deg);
 }
-.panel.birds{background:var(--field);color:var(--paper)}
-.panel.birds:hover{
-  background-color:#163D23;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23FFFFFF' stroke-width='.6' opacity='.06'/%3E%3C/svg%3E");
+.panel.birds{
+  color:var(--paper);
+  background-image:url("/images/plates/heron-landing.jpg");
+  background-size:cover;
+  background-position:center 65%;
 }
+.panel.birds::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:var(--field);
+  transition:opacity .5s ease;
+}
+.panel.birds:hover::before{opacity:.55}
+.panel.birds>*{position:relative;z-index:1}
 .panel.birds .cta{background:var(--paper);color:var(--ink)}
 .panel.birds .cta:hover{background:var(--ink);color:var(--paper)}
 .panel.birds .stamp{border-color:var(--paper);color:var(--paper);transform:rotate(-3deg)}
@@ -176,7 +184,7 @@ figure::after{bottom:14px;right:14px}
   font-weight:500;font-size:.9rem;color:#6B6B66;
 }
 .photo em{font-style:normal;border:2px dashed #C9C9C4;padding:.4rem 1rem;background:var(--paper)}
-img.photo{object-fit:cover;display:block}
+img.photo{object-fit:cover;display:block;cursor:zoom-in}
 
 .caption{padding:2.6rem 4vw 3rem;display:flex;flex-direction:column;gap:0}
 .plate-no{
@@ -219,10 +227,40 @@ img.photo{object-fit:cover;display:block}
   .plate{opacity:1;transform:none;transition:none}
 }
 
+/* ===== lightbox — click a plate to enlarge ===== */
+.lightbox{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(20,19,17,.94);
+  display:flex;align-items:center;justify-content:center;
+  padding:5vh 4vw;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease;
+}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{
+  max-width:100%;max-height:100%;
+  object-fit:contain;
+  box-shadow:none;
+}
+.lightbox .lightbox-close{
+  position:absolute;top:1.4rem;right:1.4rem;
+  width:2.6rem;height:2.6rem;
+  background:var(--paper);color:var(--ink);
+  font-family:'Anton',sans-serif;font-size:1.3rem;
+  display:flex;align-items:center;justify-content:center;
+  border:none;cursor:pointer;
+}
+.lightbox .lightbox-close:hover{background:var(--field);color:var(--paper)}
+.lightbox .lightbox-close:focus-visible{outline:3px solid var(--field);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  .lightbox{transition:none}
+}
+
 /* ===== print — the plates are specimen sheets; let them print like ones ===== */
 @media print{
   body::after{display:none}
   .hero-strip,.band,nav,footer,.cta{display:none}
   .plate{opacity:1;transform:none;break-inside:avoid;page-break-inside:avoid}
   figure::before,figure::after{opacity:.6}
+  .lightbox{display:none}
 }

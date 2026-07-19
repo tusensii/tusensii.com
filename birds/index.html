@@ -72,11 +72,6 @@
     </div>
   </article>
 
-  <div class="band">
-    <span>MORE BIRDS AS THE LIST GROWS</span>
-    <span>VOLUNTEER PARK · ARBORETUM · UNION BAY</span>
-  </div>
-
   <article class="plate">
     <figure>
       <img class="photo" src="/images/plates/mallard-drake.jpg" alt="Mallard drake swimming in dark water" loading="lazy">
@@ -127,6 +122,74 @@
       <p class="remark">Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds.</p>
     </div>
   </article>
+
+  <article class="plate">
+    <figure>
+      <img class="photo" src="/images/plates/song-sparrow-cattails.jpg" alt="Song sparrow perched on a cattail" loading="lazy">
+    </figure>
+    <div class="caption">
+      <div class="plate-no">No. VI</div>
+      <h2>Song<br>Sparrow</h2>
+      <div class="binomial">Melospiza melodia</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Nisqually National Wildlife Refuge</dd></div>
+        <div><dt>Season</dt><dd>Late spring</dd></div>
+        <div><dt>Behavior</dt><dd>Perched on a cattail, surveying the marsh</dd></div>
+      </dl>
+      <p class="remark">Common enough to overlook. <strong>Worth not overlooking.</strong></p>
+    </div>
+  </article>
+
+  <article class="plate">
+    <figure>
+      <img class="photo" src="/images/plates/song-sparrow-singing.jpg" alt="Song sparrow singing from a bare branch against blue sky" loading="lazy">
+    </figure>
+    <div class="caption">
+      <div class="plate-no">No. VII</div>
+      <h2>Song<br>Sparrow</h2>
+      <div class="binomial">Melospiza melodia</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Discovery Park, Seattle</dd></div>
+        <div><dt>Season</dt><dd>Late spring</dd></div>
+        <div><dt>Behavior</dt><dd>Singing from a bare branch</dd></div>
+      </dl>
+      <p class="remark">The song is <strong>the actual field mark</strong> — a few clear notes, then a buzzy trill.</p>
+    </div>
+  </article>
+
+  <article class="plate">
+    <figure>
+      <img class="photo" src="/images/plates/american-crow.jpg" alt="American crow perched in a conifer" loading="lazy">
+    </figure>
+    <div class="caption">
+      <div class="plate-no">No. VIII</div>
+      <h2>American<br>Crow</h2>
+      <div class="binomial">Corvus brachyrhynchos</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Discovery Park, Seattle</dd></div>
+        <div><dt>Season</dt><dd>Late spring</dd></div>
+        <div><dt>Behavior</dt><dd>Watching from a conifer, unbothered</dd></div>
+      </dl>
+      <p class="remark">Everywhere, all the time. <strong>Still worth a plate.</strong></p>
+    </div>
+  </article>
+
+  <article class="plate">
+    <figure>
+      <img class="photo" src="/images/plates/tree-swallow.jpg" alt="Tree swallow perched at the entrance of a gourd nest box" loading="lazy">
+    </figure>
+    <div class="caption">
+      <div class="plate-no">No. IX</div>
+      <h2>Tree<br>Swallow</h2>
+      <div class="binomial">Tachycineta bicolor</div>
+      <dl class="specs">
+        <div><dt>Locality</dt><dd>Union Bay Natural Area, Seattle</dd></div>
+        <div><dt>Season</dt><dd>Summer</dd></div>
+        <div><dt>Behavior</dt><dd>Guarding the entrance to a gourd nest box</dd></div>
+      </dl>
+      <p class="remark">The <strong>blue-green back</strong> only shows in the right light — otherwise it reads as black.</p>
+    </div>
+  </article>
 <!-- PLATES:END -->
 
   <footer>
@@ -134,9 +197,48 @@
     <a href="/">← Back to work</a>
   </footer>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+    <button class="lightbox-close" type="button" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
 <script>
   const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.plate').forEach(p=>io.observe(p));
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  let lastTrigger = null;
+
+  function openLightbox(img) {
+    lastTrigger = img;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    closeBtn.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('img.photo').forEach(img => {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'Enlarge photo: ' + img.alt);
+    img.addEventListener('click', () => openLightbox(img));
+    img.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+  });
 </script>
 </body>
 </html>

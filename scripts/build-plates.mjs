@@ -28,14 +28,7 @@ function plateMarkup(p, i) {
   </article>`;
 }
 
-const band = `  <div class="band">
-    <span>MORE BIRDS AS THE LIST GROWS</span>
-    <span>VOLUNTEER PARK · ARBORETUM · UNION BAY</span>
-  </div>`;
-
-const body = plates.length > 2
-  ? [...plates.slice(0, 2).map(plateMarkup), band, ...plates.slice(2).map((p, i) => plateMarkup(p, i + 2))].join('\n\n')
-  : plates.map(plateMarkup).join('\n\n');
+const body = plates.map(plateMarkup).join('\n\n');
 
 const start = template.indexOf('<!-- PLATES:START -->') + '<!-- PLATES:START -->'.length;
 const end = template.indexOf('<!-- PLATES:END -->');
