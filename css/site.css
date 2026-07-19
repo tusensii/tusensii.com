@@ -76,6 +76,13 @@ footer a:hover{color:var(--field)}
   font-family:'Anton',sans-serif;text-transform:uppercase;
   font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:.95;margin:.8rem 0 1.2rem;
 }
+/* one-off badge borrowing The Great Movie Game's own neon-on-void title styling */
+.panel h2.tgmg-title{
+  display:inline-block;
+  background:#000;
+  padding:.2em .35em;
+}
+.panel h2.tgmg-title span{text-shadow:0 0 8px currentColor,0 0 16px currentColor}
 .panel p{max-width:44ch;font-size:1.02rem}
 .panel .cta{
   align-self:flex-start;
