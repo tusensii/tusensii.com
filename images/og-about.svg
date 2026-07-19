@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect x="12" y="12" width="1176" height="606" fill="none" stroke="#141311" stroke-width="6"/>
+  <rect x="12" y="486" width="1176" height="6" fill="#1D4F2E"/>
+  <text x="60" y="330" font-family="Arial, sans-serif" font-weight="900" font-size="150" fill="#141311">ABOUT<tspan fill="#1D4F2E">★</tspan></text>
+  <text x="60" y="430" font-family="Arial, sans-serif" font-weight="700" font-size="34" fill="#141311">TUSENSII — GAMES, PHOTOGRAPHY, INFRASTRUCTURE</text>
+</svg>

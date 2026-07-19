@@ -190,3 +190,11 @@ img.photo{object-fit:cover;display:block}
 @media (prefers-reduced-motion:reduce){
   .plate{opacity:1;transform:none;transition:none}
 }
+
+/* ===== print — the plates are specimen sheets; let them print like ones ===== */
+@media print{
+  body::after{display:none}
+  .hero-strip,.band,nav,footer,.cta{display:none}
+  .plate{opacity:1;transform:none;break-inside:avoid;page-break-inside:avoid}
+  figure::before,figure::after{opacity:.6}
+}
