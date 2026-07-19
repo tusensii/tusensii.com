@@ -1,0 +1,97 @@
+- generic [active] [ref=f9e1]:
+  - banner [ref=f9e2]:
+    - link "TUSENSII" [ref=f9e3] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=f9e4]:
+      - link "Work" [ref=f9e5] [cursor=pointer]:
+        - /url: "#work"
+      - link "Birds" [ref=f9e6] [cursor=pointer]:
+        - /url: /birds/
+      - link "About" [ref=f9e7] [cursor=pointer]:
+        - /url: /about/
+  - region "Tusensii — maker of games, tools, and photographs" [ref=f9e8]:
+    - heading "TUSENSII" [level=1] [ref=f9e9]
+    - generic [ref=f9e13]:
+      - generic [ref=f9e14]: THE GREAT MOVIE GAME
+      - generic [ref=f9e15]: —
+      - generic [ref=f9e16]: BIRDS
+      - generic [ref=f9e17]: —
+      - generic [ref=f9e18]: THE GREAT MOVIE GAME
+      - generic [ref=f9e19]: —
+      - generic [ref=f9e20]: BIRDS
+      - generic [ref=f9e21]: —
+      - generic [ref=f9e22]: THE GREAT MOVIE GAME
+      - generic [ref=f9e23]: —
+      - generic [ref=f9e24]: BIRDS
+      - generic [ref=f9e25]: —
+      - generic [ref=f9e26]: THE GREAT MOVIE GAME
+      - generic [ref=f9e27]: —
+      - generic [ref=f9e28]: BIRDS
+      - generic [ref=f9e29]: —
+      - generic [ref=f9e30]: THE GREAT MOVIE GAME
+      - generic [ref=f9e31]: —
+      - generic [ref=f9e32]: BIRDS
+      - generic [ref=f9e33]: —
+      - generic [ref=f9e34]: THE GREAT MOVIE GAME
+      - generic [ref=f9e35]: —
+      - generic [ref=f9e36]: BIRDS
+      - generic [ref=f9e37]: —
+      - generic [ref=f9e38]: THE GREAT MOVIE GAME
+      - generic [ref=f9e39]: —
+      - generic [ref=f9e40]: BIRDS
+      - generic [ref=f9e41]: —
+      - generic [ref=f9e42]: THE GREAT MOVIE GAME
+      - generic [ref=f9e43]: —
+      - generic [ref=f9e44]: BIRDS
+      - generic [ref=f9e45]: —
+      - generic [ref=f9e46]: THE GREAT MOVIE GAME
+      - generic [ref=f9e47]: —
+      - generic [ref=f9e48]: BIRDS
+      - generic [ref=f9e49]: —
+      - generic [ref=f9e50]: THE GREAT MOVIE GAME
+      - generic [ref=f9e51]: —
+      - generic [ref=f9e52]: BIRDS
+      - generic [ref=f9e53]: —
+      - generic [ref=f9e54]: THE GREAT MOVIE GAME
+      - generic [ref=f9e55]: —
+      - generic [ref=f9e56]: BIRDS
+      - generic [ref=f9e57]: —
+      - generic [ref=f9e58]: THE GREAT MOVIE GAME
+      - generic [ref=f9e59]: —
+      - generic [ref=f9e60]: BIRDS
+      - generic [ref=f9e61]: —
+      - generic [ref=f9e62]: THE GREAT MOVIE GAME
+      - generic [ref=f9e63]: —
+      - generic [ref=f9e64]: BIRDS
+      - generic [ref=f9e65]: —
+      - generic [ref=f9e66]: THE GREAT MOVIE GAME
+      - generic [ref=f9e67]: —
+      - generic [ref=f9e68]: BIRDS
+      - generic [ref=f9e69]: —
+      - generic [ref=f9e70]: THE GREAT MOVIE GAME
+      - generic [ref=f9e71]: —
+      - generic [ref=f9e72]: BIRDS
+      - generic [ref=f9e73]: —
+      - generic [ref=f9e74]: THE GREAT MOVIE GAME
+      - generic [ref=f9e75]: —
+      - generic [ref=f9e76]: BIRDS
+      - generic [ref=f9e77]: —
+  - generic [ref=f9e78]:
+    - article [ref=f9e79]:
+      - generic [ref=f9e80]:
+        - generic [ref=f9e81]: Multiplayer party game
+        - heading "The Great Movie Game" [level=2] [ref=f9e82]: The GreatMovie Game
+        - paragraph [ref=f9e83]: For when nobody can agree what to watch. Everyone throws in a few picks, you take turns voting them off, and whatever survives is tonight's movie.
+      - link "Play it now" [ref=f9e84] [cursor=pointer]:
+        - /url: https://thegreatmoviegame.biz
+      - generic [ref=f9e85]: 2–10 PLAYERS
+    - article [ref=f9e86]:
+      - generic [ref=f9e87]:
+        - generic [ref=f9e88]: Field photography
+        - heading "Birds" [level=2] [ref=f9e89]
+        - paragraph [ref=f9e90]: Local ducks, herons, and the occasional rare bird, photographed on walks around Puget Sound.
+      - link "See the birds" [ref=f9e91] [cursor=pointer]:
+        - /url: /birds/
+      - generic [ref=f9e92]: VOL. I
+  - contentinfo [ref=f9e93]:
+    - generic [ref=f9e94]: © 2026 Christopher Petrie

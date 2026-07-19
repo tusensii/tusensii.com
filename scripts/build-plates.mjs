@@ -30,7 +30,7 @@ function plateMarkup(p, i) {
 
 const band = `  <div class="band">
     <span>MORE BIRDS AS THE LIST GROWS</span>
-    <span>NISQUALLY · DISCOVERY PARK · GRANITE MTN</span>
+    <span>VOLUNTEER PARK · ARBORETUM · UNION BAY</span>
   </div>`;
 
 const body = plates.length > 2

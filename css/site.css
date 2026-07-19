@@ -85,12 +85,12 @@ footer a:hover{color:var(--field)}
 .panel.tgmg .cta{background:var(--paper);color:var(--ink)}
 .panel.tgmg .cta:hover{background:var(--field);color:var(--paper)}
 .panel.tgmg .stamp{border-color:var(--paper);color:var(--paper)}
-.tgmg-title .pink{color:#ff2d7b;text-shadow:0 0 7px #ff2d7b,0 0 20px rgba(255,45,123,.5),0 0 40px rgba(255,45,123,.25)}
-.tgmg-title .cyan{color:#00f0ff;text-shadow:0 0 7px #00f0ff,0 0 20px rgba(0,240,255,.5),0 0 40px rgba(0,240,255,.25)}
-.tgmg-title .yellow{color:#ffe156;text-shadow:0 0 7px #ffe156,0 0 20px rgba(255,225,86,.5),0 0 40px rgba(255,225,86,.25)}
+.tgmg-title .pink{color:#ff2d7b;text-shadow:0 0 2px #ff2d7b,0 0 8px rgba(255,45,123,.5),0 0 16px rgba(255,45,123,.25)}
+.tgmg-title .cyan{color:#00f0ff;text-shadow:0 0 2px #00f0ff,0 0 8px rgba(0,240,255,.5),0 0 16px rgba(0,240,255,.25)}
+.tgmg-title .yellow{color:#ffe156;text-shadow:0 0 2px #ffe156,0 0 8px rgba(255,225,86,.5),0 0 16px rgba(255,225,86,.25)}
 @keyframes neon-flicker{
   0%,19%,21%,23%,25%,54%,56%,100%{
-    text-shadow:0 0 7px #ff2d7b,0 0 20px rgba(255,45,123,.5),0 0 40px rgba(255,45,123,.25);
+    text-shadow:0 0 2px #ff2d7b,0 0 8px rgba(255,45,123,.5),0 0 16px rgba(255,45,123,.25);
     opacity:1;
   }
   20%,24%,55%{text-shadow:none;opacity:.7}

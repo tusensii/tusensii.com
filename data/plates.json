@@ -1,32 +1,52 @@
 [
   {
-    "image": null,
-    "alt": "Cedar waxwing stripping a crab apple",
-    "species": "Cedar Waxwing",
-    "binomial": "Bombycilla cedrorum",
-    "locality": "Union Bay Natural Area, Seattle",
-    "season": "Late winter",
-    "behavior": "Stripping a crab apple, methodically",
-    "remark": "The mask makes every waxwing look like it knows something you don't. <strong>This one did:</strong> the fruit two branches over was better."
-  },
-  {
-    "image": null,
-    "alt": "Japanese cormorant drying its wings",
-    "species": "Japanese Cormorant",
-    "binomial": "Phalacrocorax capillatus",
-    "locality": "Enoshima, Kanagawa",
-    "season": "Spring",
-    "behavior": "Wings spread to the sea wind",
-    "remark": "An ID argued over lunch and settled by gular skin. <strong>The best souvenir</strong> from that trip weighs nothing."
-  },
-  {
-    "image": null,
-    "alt": "Great blue heron standing still in shallow water",
+    "image": "/images/plates/great-blue-heron.jpg",
+    "alt": "Great blue heron in flight against a clear blue sky",
     "species": "Great Blue Heron",
     "binomial": "Ardea herodias",
     "locality": "Nisqually National Wildlife Refuge",
-    "season": "Autumn",
-    "behavior": "Hunting; patience as a verb",
-    "remark": "Forty minutes without moving, then one strike. <strong>Herons understand something about attention</strong> that I keep trying to learn."
+    "season": "Late spring",
+    "behavior": "Flying low over the refuge",
+    "remark": "In flight they look <strong>almost prehistoric</strong> — all wing, barely any bird."
+  },
+  {
+    "image": "/images/plates/caspian-tern.jpg",
+    "alt": "Caspian tern in flight against a clear blue sky",
+    "species": "Caspian Tern",
+    "binomial": "Hydroprogne caspia",
+    "locality": "Discovery Park, Seattle",
+    "season": "Late spring",
+    "behavior": "Patrolling the shoreline",
+    "remark": "The <strong>red bill</strong> is what gives it away. Without it, easy to mistake for a gull at a distance."
+  },
+  {
+    "image": "/images/plates/mallard-drake.jpg",
+    "alt": "Mallard drake swimming in dark water",
+    "species": "Mallard",
+    "binomial": "Anas platyrhynchos",
+    "locality": "Volunteer Park, Seattle",
+    "season": "Late spring",
+    "behavior": "Drifting across still water at dusk",
+    "remark": "The head only reads <strong>iridescent green</strong> in direct light. Otherwise it's just dark."
+  },
+  {
+    "image": "/images/plates/mallard-ducklings.jpg",
+    "alt": "Mallard hen leading a line of ducklings across dark water",
+    "species": "Mallard",
+    "binomial": "Anas platyrhynchos",
+    "locality": "Washington Park Arboretum, Seattle",
+    "season": "Early summer",
+    "behavior": "Leading nine ducklings across the pond, single file",
+    "remark": "None of them more than <strong>a few days old</strong> yet."
+  },
+  {
+    "image": "/images/plates/virginia-rail.jpg",
+    "alt": "Virginia rail foraging beside a path, prey in its bill",
+    "species": "Virginia Rail",
+    "binomial": "Rallus limicola",
+    "locality": "Union Bay Natural Area, Seattle",
+    "season": "Summer",
+    "behavior": "Foraging at the path's edge, out of the reeds for once",
+    "remark": "Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds."
   }
 ]
