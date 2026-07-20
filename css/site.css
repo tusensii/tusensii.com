@@ -4,6 +4,7 @@
   --ink:#141311;
   --field:#1D4F2E; /* spruce green — the woods, not a startup accent */
   --rule:#141311;
+  --parchment:#C9B486; /* old-map tan, GridWarden's resting color */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -40,25 +41,7 @@ footer a:hover{color:var(--field)}
   *{transition:none!important}
 }
 
-/* ===== homepage only: hero, marquee strip, project board/panels ===== */
-.hero{border-bottom:3px solid var(--rule);overflow:hidden}
-.hero h1{
-  font-family:'Anton',sans-serif;
-  font-size:clamp(2.75rem,10.5vw,8.5rem);line-height:1;letter-spacing:-.01em;
-  padding:5vh 2vw 1.4vh;
-  text-transform:uppercase;
-  display:flex;align-items:center;justify-content:center;gap:.1em;
-  white-space:nowrap;
-}
-.hero h1 .star{width:1.05em;height:1.05em;flex-shrink:0;fill:var(--field);transform:translateY(.02em)}
-.hero-strip{
-  border-top:3px solid var(--rule);
-  display:flex;gap:3rem;white-space:nowrap;overflow:hidden;
-  padding:.55rem 0;font-weight:700;font-size:.95rem;
-}
-.hero-strip .track{display:flex;gap:3rem;animation:scroll 22s linear infinite}
-@keyframes scroll{to{transform:translateX(-50%)}}
-
+/* ===== homepage only: project board/panels ===== */
 .board{display:grid;grid-template-columns:1fr 1fr;min-height:72vh}
 .panel{
   border-right:3px solid var(--rule);
@@ -71,7 +54,6 @@ footer a:hover{color:var(--field)}
   background-color:#F3F3F3;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0' stroke='%23141311' stroke-width='.6' opacity='.06'/%3E%3C/svg%3E");
 }
-.panel .tag{font-weight:700;font-size:.92rem}
 .panel h2{
   font-family:'Anton',sans-serif;text-transform:uppercase;
   font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:.95;margin:.8rem 0 1.2rem;
@@ -84,7 +66,7 @@ footer a:hover{color:var(--field)}
 }
 .panel.tgmg .cta{background:var(--paper);color:var(--ink)}
 .panel.tgmg .cta:hover{background:var(--field);color:var(--paper)}
-.panel.tgmg .stamp{border-color:var(--paper);color:var(--paper)}
+.panel.tgmg p{font-family:'Space Grotesk',sans-serif}
 .panel h2.tgmg-title{
   font-family:'Orbitron',sans-serif;font-weight:900;
   font-size:clamp(1.9rem,3.2vw,3.5rem);line-height:.95;letter-spacing:.15em;
@@ -103,6 +85,39 @@ footer a:hover{color:var(--field)}
 @media (prefers-reduced-motion:reduce){
   .tgmg-title .flicker{animation:none}
 }
+/* dancing movie-prop icons, borrowed from the game's own character set — kept clear of the title/copy/CTA on the left */
+.tgmg-icons{
+  position:absolute;inset:8% 5% 12% auto;
+  width:30%;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .35s ease;
+}
+.panel.tgmg:hover .tgmg-icons{opacity:1}
+.tgmg-icon{
+  position:absolute;
+  width:2.4rem;height:2.4rem;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.15));
+  animation:tgmg-chase 7s ease-in-out infinite;
+}
+.tgmg-icon svg{width:100%;height:100%;image-rendering:pixelated}
+.tgmg-icon.i1{top:2%;left:14%;animation-delay:-5.25s}
+.tgmg-icon.i2{top:8%;left:66%;animation-delay:-3.5s}
+.tgmg-icon.i3{top:58%;left:70%;animation-delay:-1.75s}
+.tgmg-icon.i4{top:64%;left:16%;animation-delay:0s}
+@keyframes tgmg-chase{
+  0%{transform:translate(0,0) rotate(0deg)}
+  25%{transform:translate(1rem,-.7rem) rotate(10deg)}
+  50%{transform:translate(.2rem,-1.3rem) rotate(-8deg)}
+  75%{transform:translate(-.9rem,-.6rem) rotate(9deg)}
+  100%{transform:translate(0,0) rotate(0deg)}
+}
+@media (max-width:700px){
+  .tgmg-icons{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .tgmg-icon{animation:none}
+}
 .panel p{max-width:44ch;font-size:1.02rem}
 .panel .cta{
   align-self:flex-start;
@@ -113,17 +128,11 @@ footer a:hover{color:var(--field)}
 }
 .panel .cta:hover{background:var(--field);transform:translate(-2px,-2px)}
 .panel .cta:focus-visible{outline:3px solid var(--field);outline-offset:3px}
-.panel .stamp{
-  position:absolute;top:2.6rem;right:3vw;
-  font-weight:700;font-size:.85rem;
-  border:2px solid var(--ink);padding:.3rem .7rem;
-  transform:rotate(4deg);
-}
 .panel.birds{
   color:var(--paper);
   background-image:url("/images/plates/heron-landing.jpg");
   background-size:cover;
-  background-position:center 65%;
+  background-position:center 62%;
 }
 .panel.birds::before{
   content:"";position:absolute;inset:0;z-index:0;
@@ -134,20 +143,33 @@ footer a:hover{color:var(--field)}
 .panel.birds>*{position:relative;z-index:1}
 .panel.birds .cta{background:var(--paper);color:var(--ink)}
 .panel.birds{border-right:none}
-.panel.gridwarden{grid-column:1/-1;border-right:none;border-top:3px solid var(--rule)}
-.panel.gridwarden .tag{color:var(--field)}
+.panel.gridwarden{
+  grid-column:1/-1;border-right:none;border-top:3px solid var(--rule);
+  background-image:url("/images/site/gridwarden-map.jpg");
+  background-size:cover;
+  background-position:center 45%;
+}
+.panel.gridwarden::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:var(--parchment);
+  transition:opacity .5s ease;
+}
+.panel.gridwarden:hover::before{opacity:.8}
+.panel.gridwarden>*{position:relative;z-index:1}
+/* borrows GridWarden's own type system: Cinzel for the wordmark, IM Fell English for flavor copy */
+.panel h2.gridwarden-title{
+  font-family:'Cinzel',Georgia,serif;font-weight:700;
+  font-size:clamp(2.3rem,4.8vw,4.2rem);line-height:1.05;
+  letter-spacing:.04em;text-transform:none;
+}
+.panel.gridwarden p{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:1.15rem}
 .panel.birds .cta:hover{background:var(--ink);color:var(--paper)}
-.panel.birds .stamp{border-color:var(--paper);color:var(--paper);transform:rotate(-3deg)}
 
 @media (max-width:760px){
   .board{grid-template-columns:1fr}
   .panel{border-right:none;border-bottom:3px solid var(--rule)}
   .panel:last-child{border-bottom:none}
 }
-@media (prefers-reduced-motion:reduce){
-  .hero-strip .track{animation:none}
-}
-
 /* ===== birds page only: masthead, plate rows, band ===== */
 .masthead{border-bottom:3px solid var(--rule);overflow:hidden}
 .masthead h1{
@@ -262,7 +284,7 @@ img.photo{object-fit:cover;display:block;cursor:zoom-in}
 /* ===== print — the plates are specimen sheets; let them print like ones ===== */
 @media print{
   body::after{display:none}
-  .hero-strip,.band,nav,footer,.cta{display:none}
+  .band,nav,footer,.cta{display:none}
   .plate{opacity:1;transform:none;break-inside:avoid;page-break-inside:avoid}
   figure::before,figure::after{opacity:.6}
   .lightbox{display:none}
