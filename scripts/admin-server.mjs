@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 import { createServer } from 'node:http';
-import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname, normalize } from 'node:path';
 
 const ROOT = process.cwd();
 const PORT = 4790;
+
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .normalize('NFKD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80);
+}
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
@@ -58,6 +67,28 @@ const server = createServer(async (req, res) => {
       writeJson('data/fact-catalog.json', body.catalog);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+  if (req.method === 'POST' && req.url === '/api/upload-image') {
+    try {
+      const body = JSON.parse(await readBody(req));
+      const ext = (extname(body.filename || '') || '.jpg').toLowerCase();
+      if (!['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
+        throw new Error(`Unsupported image type: ${ext}`);
+      }
+      const base = slugify(body.species || body.filename || 'bird');
+      if (!base) throw new Error('Could not derive a safe filename');
+      const targetDir = join(ROOT, 'images/plates');
+      mkdirSync(targetDir, { recursive: true });
+      const targetPath = join(targetDir, base + ext);
+      if (!targetPath.startsWith(targetDir)) throw new Error('Invalid path');
+      writeFileSync(targetPath, Buffer.from(body.dataBase64, 'base64'));
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, path: `/images/plates/${base}${ext}` }));
     } catch (err) {
       res.writeHead(400, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: false, error: err.message }));
