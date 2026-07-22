@@ -2,6 +2,7 @@
 import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname, normalize } from 'node:path';
+import { renderBird, renderSection, loadCatalog } from './render-plate.mjs';
 
 const ROOT = process.cwd();
 const PORT = 4790;
@@ -67,6 +68,21 @@ const server = createServer(async (req, res) => {
       writeJson('data/fact-catalog.json', body.catalog);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
+    return;
+  }
+  if (req.method === 'POST' && req.url === '/api/render') {
+    try {
+      const body = JSON.parse(await readBody(req));
+      const catalog = loadCatalog();
+      const html = body.item.type === 'section'
+        ? renderSection(body.item)
+        : renderBird(body.item, body.plateNumber || 'I', catalog);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, html }));
     } catch (err) {
       res.writeHead(400, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: false, error: err.message }));
