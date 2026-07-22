@@ -3,6 +3,9 @@ import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, extname, normalize } from 'node:path';
 import { renderBird, renderSection, loadCatalog } from './render-plate.mjs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+const execFileAsync = promisify(execFile);
 
 const ROOT = process.cwd();
 const PORT = 4790;
@@ -53,6 +56,15 @@ function serveStatic(req, res) {
   res.end(readFileSync(filePath));
 }
 
+async function runStep(name, command, args) {
+  try {
+    const { stdout, stderr } = await execFileAsync(command, args, { cwd: ROOT });
+    return { name, ok: true, output: stdout + stderr };
+  } catch (err) {
+    return { name, ok: false, output: (err.stdout || '') + (err.stderr || '') + '\n' + err.message };
+  }
+}
+
 const server = createServer(async (req, res) => {
   if (req.method === 'GET' && req.url === '/api/data') {
     const items = readJson('data/plates.json');
@@ -72,6 +84,26 @@ const server = createServer(async (req, res) => {
       res.writeHead(400, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ ok: false, error: err.message }));
     }
+    return;
+  }
+  if (req.method === 'POST' && req.url === '/api/deploy') {
+    const steps = [
+      ['build-plates', 'node', ['scripts/build-plates.mjs']],
+      ['version-assets', 'node', ['scripts/version-assets.mjs']],
+      ['wrangler-deploy', 'npx', ['wrangler', 'pages', 'deploy', '.']],
+    ];
+    let combinedOutput = '';
+    for (const [name, command, args] of steps) {
+      const result = await runStep(name, command, args);
+      combinedOutput += `\n--- ${name} ---\n${result.output}\n`;
+      if (!result.ok) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, output: combinedOutput, failedAt: name }));
+        return;
+      }
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: true, output: combinedOutput }));
     return;
   }
   if (req.method === 'POST' && req.url === '/api/render') {
