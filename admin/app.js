@@ -154,12 +154,23 @@ function renderBirdEditor(pane, item) {
   const upload = document.createElement('input');
   upload.type = 'file';
   upload.accept = 'image/*';
+  upload.hidden = true;
   upload.addEventListener('change', () => uploadImage(item, upload.files[0]));
-  pane.appendChild(upload);
+
+  const chooseBtn = document.createElement('button');
+  chooseBtn.type = 'button';
+  chooseBtn.textContent = 'Choose File';
+  // Safari sometimes refuses to open the OS picker for a file input that
+  // was just inserted via appendChild/innerHTML; calling click() on it
+  // from a real button's click handler always counts as a user gesture.
+  chooseBtn.addEventListener('click', () => upload.click());
+
+  pane.append(chooseBtn, upload);
 
   if (item.image) {
     const preview = document.createElement('img');
     preview.src = item.image;
+    preview.alt = '';
     preview.className = 'thumb';
     pane.appendChild(preview);
   }
