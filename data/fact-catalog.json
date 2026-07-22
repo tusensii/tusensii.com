@@ -1,0 +1,15 @@
+[
+  { "key": "locality", "label": "Locality" },
+  { "key": "season", "label": "Season" },
+  { "key": "behavior", "label": "Behavior" },
+  { "key": "diet", "label": "Diet" },
+  { "key": "habitat", "label": "Habitat" },
+  { "key": "wingspan", "label": "Wingspan" },
+  { "key": "lifespan", "label": "Lifespan" },
+  { "key": "conservation_status", "label": "Conservation Status" },
+  { "key": "call_song", "label": "Call / Song" },
+  { "key": "migration", "label": "Migration" },
+  { "key": "nesting", "label": "Nesting" },
+  { "key": "size_weight", "label": "Size / Weight" },
+  { "key": "similar_species", "label": "Similar Species" }
+]

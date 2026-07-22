@@ -1,92 +1,200 @@
 [
   {
+    "type": "bird",
     "image": "/images/plates/great-blue-heron.jpg",
     "alt": "Great blue heron in flight against a clear blue sky",
     "species": "Great Blue Heron",
     "binomial": "Ardea herodias",
-    "locality": "Nisqually National Wildlife Refuge",
-    "season": "Late spring",
-    "behavior": "Flying low over the refuge",
-    "remark": "In flight they look <strong>almost prehistoric</strong> — all wing, barely any bird."
+    "remark": "In flight they look <strong>almost prehistoric</strong> — all wing, barely any bird.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Nisqually National Wildlife Refuge"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Flying low over the refuge"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/caspian-tern.jpg",
     "alt": "Caspian tern in flight against a clear blue sky",
     "species": "Caspian Tern",
     "binomial": "Hydroprogne caspia",
-    "locality": "Discovery Park, Seattle",
-    "season": "Late spring",
-    "behavior": "Patrolling the shoreline",
-    "remark": "The <strong>red bill</strong> is what gives it away. Without it, easy to mistake for a gull at a distance."
+    "remark": "The <strong>red bill</strong> is what gives it away. Without it, easy to mistake for a gull at a distance.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Discovery Park, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Patrolling the shoreline"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/mallard-drake.jpg",
     "alt": "Mallard drake swimming in dark water",
     "species": "Mallard",
     "binomial": "Anas platyrhynchos",
-    "locality": "Volunteer Park, Seattle",
-    "season": "Late spring",
-    "behavior": "Drifting across still water at dusk",
-    "remark": "The head only reads <strong>iridescent green</strong> in direct light. Otherwise it's just dark."
+    "remark": "The head only reads <strong>iridescent green</strong> in direct light. Otherwise it's just dark.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Volunteer Park, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Drifting across still water at dusk"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/mallard-ducklings.jpg",
     "alt": "Mallard hen leading a line of ducklings across dark water",
     "species": "Mallard",
     "binomial": "Anas platyrhynchos",
-    "locality": "Washington Park Arboretum, Seattle",
-    "season": "Early summer",
-    "behavior": "Leading nine ducklings across the pond, single file",
-    "remark": "None of them more than <strong>a few days old</strong> yet."
+    "remark": "None of them more than <strong>a few days old</strong> yet.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Washington Park Arboretum, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Early summer"
+      },
+      {
+        "type": "behavior",
+        "value": "Leading nine ducklings across the pond, single file"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/virginia-rail.jpg",
     "alt": "Virginia rail foraging beside a path, prey in its bill",
     "species": "Virginia Rail",
     "binomial": "Rallus limicola",
-    "locality": "Union Bay Natural Area, Seattle",
-    "season": "Summer",
-    "behavior": "Foraging at the path's edge, out of the reeds for once",
-    "remark": "Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds."
+    "remark": "Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Union Bay Natural Area, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Summer"
+      },
+      {
+        "type": "behavior",
+        "value": "Foraging at the path's edge, out of the reeds for once"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/song-sparrow-cattails.jpg",
     "alt": "Song sparrow perched on a cattail",
     "species": "Song Sparrow",
     "binomial": "Melospiza melodia",
-    "locality": "Nisqually National Wildlife Refuge",
-    "season": "Late spring",
-    "behavior": "Perched on a cattail, surveying the marsh",
-    "remark": "Common enough to overlook. <strong>Worth not overlooking.</strong>"
+    "remark": "Common enough to overlook. <strong>Worth not overlooking.</strong>",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Nisqually National Wildlife Refuge"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Perched on a cattail, surveying the marsh"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/song-sparrow-singing.jpg",
     "alt": "Song sparrow singing from a bare branch against blue sky",
     "species": "Song Sparrow",
     "binomial": "Melospiza melodia",
-    "locality": "Discovery Park, Seattle",
-    "season": "Late spring",
-    "behavior": "Singing from a bare branch",
-    "remark": "The song is <strong>the actual field mark</strong> — a few clear notes, then a buzzy trill."
+    "remark": "The song is <strong>the actual field mark</strong> — a few clear notes, then a buzzy trill.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Discovery Park, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Singing from a bare branch"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/american-crow.jpg",
     "alt": "American crow perched in a conifer",
     "species": "American Crow",
     "binomial": "Corvus brachyrhynchos",
-    "locality": "Discovery Park, Seattle",
-    "season": "Late spring",
-    "behavior": "Watching from a conifer, unbothered",
-    "remark": "Everywhere, all the time. <strong>Still worth a plate.</strong>"
+    "remark": "Everywhere, all the time. <strong>Still worth a plate.</strong>",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Discovery Park, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      },
+      {
+        "type": "behavior",
+        "value": "Watching from a conifer, unbothered"
+      }
+    ]
   },
   {
+    "type": "bird",
     "image": "/images/plates/tree-swallow.jpg",
     "alt": "Tree swallow perched at the entrance of a gourd nest box",
     "species": "Tree Swallow",
     "binomial": "Tachycineta bicolor",
-    "locality": "Union Bay Natural Area, Seattle",
-    "season": "Summer",
-    "behavior": "Guarding the entrance to a gourd nest box",
-    "remark": "The <strong>blue-green back</strong> only shows in the right light — otherwise it reads as black."
+    "remark": "The <strong>blue-green back</strong> only shows in the right light — otherwise it reads as black.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Union Bay Natural Area, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Summer"
+      },
+      {
+        "type": "behavior",
+        "value": "Guarding the entrance to a gourd nest box"
+      }
+    ]
   }
 ]
