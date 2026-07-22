@@ -1,3 +1,31 @@
 <!DOCTYPE html>
-<html><head><title>Bird Plates Admin</title></head>
-<body><h1>Admin UI loading...</h1></body></html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bird Plates Admin</title>
+  <link rel="stylesheet" href="/admin/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside id="list-pane">
+      <div class="list-actions">
+        <button id="add-bird">+ Add Bird</button>
+        <button id="add-section">+ Add Section</button>
+      </div>
+      <ol id="item-list"></ol>
+    </aside>
+    <main id="editor-pane">
+      <p class="empty-state">Select an item to edit.</p>
+    </main>
+    <aside id="preview-pane">
+      <p class="empty-state">Preview appears here.</p>
+    </aside>
+  </div>
+  <div class="toolbar">
+    <button id="save-btn">Save</button>
+    <button id="deploy-btn">Deploy</button>
+    <span id="status-message"></span>
+  </div>
+  <script type="module" src="/admin/app.js"></script>
+</body>
+</html>

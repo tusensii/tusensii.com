@@ -1,0 +1,21 @@
+body { font-family: system-ui, sans-serif; margin: 0; color: #222; }
+.admin-layout { display: grid; grid-template-columns: 260px 1fr 1fr; height: calc(100vh - 48px); }
+#list-pane { overflow-y: auto; border-right: 1px solid #ccc; padding: 0.5rem; }
+#item-list { list-style: none; margin: 0; padding: 0; }
+.row { display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem; border-bottom: 1px solid #eee; cursor: pointer; }
+.row-section { background: #eaf5ec; font-weight: 700; }
+.pos-input { width: 3rem; }
+.row-label { flex: 1; }
+.row-num { font-weight: 700; margin-right: 0.4rem; color: #1D4F2E; }
+#editor-pane, #preview-pane { overflow-y: auto; padding: 1rem; }
+.field { display: block; margin-bottom: 0.8rem; }
+.field span { display: block; font-weight: 700; margin-bottom: 0.2rem; }
+.field input, .field textarea { width: 100%; box-sizing: border-box; padding: 0.4rem; }
+.thumb { max-width: 200px; display: block; margin-top: 0.5rem; }
+.facts-editor { margin-top: 1rem; border-top: 2px solid #ccc; padding-top: 0.5rem; }
+.fact-row { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; }
+.fact-row span { min-width: 8rem; font-weight: 700; }
+.add-fact-row { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.toolbar { height: 48px; display: flex; align-items: center; gap: 1rem; padding: 0 1rem; border-top: 1px solid #ccc; }
+.empty-state { color: #888; font-style: italic; }
+.preview-frame { width: 100%; height: 80vh; border: none; }
