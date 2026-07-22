@@ -1,10 +1,23 @@
 #!/usr/bin/env node
 import { createServer } from 'node:http';
-import { readFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname, normalize } from 'node:path';
 
 const ROOT = process.cwd();
 const PORT = 4790;
+
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', (chunk) => { data += chunk; });
+    req.on('end', () => resolve(data));
+    req.on('error', reject);
+  });
+}
+
+function writeJson(relPath, value) {
+  writeFileSync(join(ROOT, relPath), JSON.stringify(value, null, 2) + '\n');
+}
 
 const MIME = {
   '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript',
@@ -30,12 +43,25 @@ function serveStatic(req, res) {
   res.end(readFileSync(filePath));
 }
 
-const server = createServer((req, res) => {
+const server = createServer(async (req, res) => {
   if (req.method === 'GET' && req.url === '/api/data') {
     const items = readJson('data/plates.json');
     const catalog = readJson('data/fact-catalog.json');
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ items, catalog }));
+    return;
+  }
+  if (req.method === 'POST' && req.url === '/api/save') {
+    try {
+      const body = JSON.parse(await readBody(req));
+      writeJson('data/plates.json', body.items);
+      writeJson('data/fact-catalog.json', body.catalog);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: err.message }));
+    }
     return;
   }
   serveStatic(req, res);
