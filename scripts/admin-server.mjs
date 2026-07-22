@@ -90,7 +90,7 @@ const server = createServer(async (req, res) => {
     const steps = [
       ['build-plates', 'node', ['scripts/build-plates.mjs']],
       ['version-assets', 'node', ['scripts/version-assets.mjs']],
-      ['wrangler-deploy', 'npx', ['wrangler', 'pages', 'deploy', '.']],
+      ['wrangler-deploy', 'node', ['scripts/deploy.mjs']],
     ];
     let combinedOutput = '';
     for (const [name, command, args] of steps) {
