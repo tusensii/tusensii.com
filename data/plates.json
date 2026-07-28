@@ -1,25 +1,29 @@
 [
   {
+    "type": "section",
+    "title": "Wading Birds"
+  },
+  {
     "type": "bird",
     "image": "/images/plates/great-blue-heron.jpg",
-    "alt": "Great blue heron in flight against a clear blue sky",
+    "alt": "Great blue heron spreading its wings as it lands in the water",
     "species": "Great Blue Heron",
     "binomial": "Ardea herodias",
-    "remark": "In flight they look <strong>almost prehistoric</strong> — all wing, barely any bird.",
+    "remark": "Males choose the nest site while the female builds it, often high up in mature trees above standing water to deter predators.",
     "facts": [
       {
         "type": "locality",
-        "value": "Nisqually National Wildlife Refuge"
+        "value": "Discovery Park"
       },
       {
         "type": "season",
         "value": "Late spring"
-      },
-      {
-        "type": "behavior",
-        "value": "Flying low over the refuge"
       }
     ]
+  },
+  {
+    "type": "section",
+    "title": "Seabirds & Shorebirds"
   },
   {
     "type": "bird",
@@ -31,7 +35,7 @@
     "facts": [
       {
         "type": "locality",
-        "value": "Discovery Park, Seattle"
+        "value": "Discovery Park"
       },
       {
         "type": "season",
@@ -44,24 +48,24 @@
     ]
   },
   {
+    "type": "section",
+    "title": "Waterfowl"
+  },
+  {
     "type": "bird",
     "image": "/images/plates/mallard-drake.jpg",
     "alt": "Mallard drake swimming in dark water",
     "species": "Mallard",
     "binomial": "Anas platyrhynchos",
-    "remark": "The head only reads <strong>iridescent green</strong> in direct light. Otherwise it's just dark.",
+    "remark": "The head only reads <strong>iridescent green</strong> in direct light, otherwise it's just dark. This is a handsome male.",
     "facts": [
       {
         "type": "locality",
-        "value": "Volunteer Park, Seattle"
+        "value": "Washington Park Arboretum, Seattle"
       },
       {
         "type": "season",
         "value": "Late spring"
-      },
-      {
-        "type": "behavior",
-        "value": "Drifting across still water at dusk"
       }
     ]
   },
@@ -71,7 +75,7 @@
     "alt": "Mallard hen leading a line of ducklings across dark water",
     "species": "Mallard",
     "binomial": "Anas platyrhynchos",
-    "remark": "None of them more than <strong>a few days old</strong> yet.",
+    "remark": "A mom with her babies.",
     "facts": [
       {
         "type": "locality",
@@ -80,20 +84,38 @@
       {
         "type": "season",
         "value": "Early summer"
+      }
+    ]
+  },
+  {
+    "type": "bird",
+    "image": "/images/plates/gadwall.jpg",
+    "alt": "A Gadwall floats along in the water",
+    "species": "Gadwall",
+    "binomial": "Mareca strepera",
+    "remark": "You might look at this and think, \"ahh, the common female Mallard,\" and you would be WRONG. This is the Gadwall, which steals the food of the Mallard as soon as it returns from diving. Look for the fine vermiculation vs. larger brown patterning.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Washington Park Arboretum"
+      },
+      {
+        "type": "season",
+        "value": "Summer"
       },
       {
         "type": "behavior",
-        "value": "Leading nine ducklings across the pond, single file"
+        "value": "Kleptoparasitism"
       }
     ]
   },
   {
     "type": "bird",
     "image": "/images/plates/virginia-rail.jpg",
-    "alt": "Virginia rail foraging beside a path, prey in its bill",
+    "alt": "Virginia rail foraging beside a path, with a worm in its bill",
     "species": "Virginia Rail",
     "binomial": "Rallus limicola",
-    "remark": "Rails stay hidden. <strong>This one stepped into the open</strong> for about four seconds.",
+    "remark": "Rails stay hidden, and I heard this one before I saw it. Also, they inspired the saying \"thin as a rail!\"",
     "facts": [
       {
         "type": "locality",
@@ -105,7 +127,69 @@
       },
       {
         "type": "behavior",
-        "value": "Foraging at the path's edge, out of the reeds for once"
+        "value": "Virginia rail foraging beside a path, with a worm in its bill"
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "title": "Songbirds"
+  },
+  {
+    "type": "bird",
+    "image": "/images/plates/tree-swallow.jpg",
+    "alt": "Purple Martin perched at the entrance of a gourd nest box",
+    "species": "Purple Martin",
+    "binomial": "Progne subis",
+    "remark": "This is a male feeding some babies in a classic gourd birdhouse, which they're addicted to! They almost totally rely on humans for housing.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Union Bay Natural Area, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Summer"
+      }
+    ]
+  },
+  {
+    "type": "bird",
+    "image": "/images/plates/song-sparrow-singing.jpg",
+    "alt": "Song sparrow singing from a bare branch against blue sky",
+    "species": "Song Sparrow",
+    "binomial": "Melospiza melodia",
+    "remark": "These are noisy birds that you've probably heard a hundred times, one of ~21 different species of sparrow found in the PNW.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Discovery Park, Seattle"
+      },
+      {
+        "type": "season",
+        "value": "Late spring"
+      }
+    ]
+  },
+  {
+    "type": "bird",
+    "image": "/images/plates/new-bird.jpg",
+    "alt": "A Yellow Warbler sitting on a tree branch.",
+    "species": "Yellow Warbler",
+    "binomial": "Setophaga petechia",
+    "remark": "The Brown-headed Cowbird will sometimes lay eggs in the Yellow Warbler's nest. Instead of raising the chicks, the Yellow Warbler will occasionally build a new nest on top and lay new eggs. One nest was found with six layers.",
+    "facts": [
+      {
+        "type": "locality",
+        "value": "Nisqually National Wildlife Refuge"
+      },
+      {
+        "type": "season",
+        "value": "Spring"
+      },
+      {
+        "type": "migration",
+        "value": "They have one of the broadest breeding ranges of any warbler, from Alaska across nearly all of North America down into Mexico, with mangrove-dwelling subspecies in Central America and the Caribbean."
       }
     ]
   },
@@ -113,9 +197,9 @@
     "type": "bird",
     "image": "/images/plates/song-sparrow-cattails.jpg",
     "alt": "Song sparrow perched on a cattail",
-    "species": "Song Sparrow",
-    "binomial": "Melospiza melodia",
-    "remark": "Common enough to overlook. <strong>Worth not overlooking.</strong>",
+    "species": "Marsh Wren",
+    "binomial": "Cistothorus palustris",
+    "remark": "These little Pokémon build fake nests around their habitat to trick predators. This one is grabbing a bit cattail, probably to build one.",
     "facts": [
       {
         "type": "locality",
@@ -126,30 +210,34 @@
         "value": "Late spring"
       },
       {
-        "type": "behavior",
-        "value": "Perched on a cattail, surveying the marsh"
+        "type": "size_weight",
+        "value": "About a AAA Battery"
       }
     ]
   },
   {
     "type": "bird",
-    "image": "/images/plates/song-sparrow-singing.jpg",
-    "alt": "Song sparrow singing from a bare branch against blue sky",
-    "species": "Song Sparrow",
-    "binomial": "Melospiza melodia",
-    "remark": "The song is <strong>the actual field mark</strong> — a few clear notes, then a buzzy trill.",
+    "image": "/images/plates/brown-creeper.jpg",
+    "alt": "Brown Creeper well camouflaged against a tree",
+    "species": "Brown Creeper",
+    "binomial": "Certhia americana",
+    "remark": "Because of their habitat and diet, their presence is an indicator of old growth forest health as those conditions are more prevalent in old growth forests.",
     "facts": [
       {
         "type": "locality",
-        "value": "Discovery Park, Seattle"
+        "value": "Discovery Park"
+      },
+      {
+        "type": "habitat",
+        "value": "Flaps of bark on dead tress"
+      },
+      {
+        "type": "diet",
+        "value": "Bugs from tree crevices"
       },
       {
         "type": "season",
-        "value": "Late spring"
-      },
-      {
-        "type": "behavior",
-        "value": "Singing from a bare branch"
+        "value": "Spring"
       }
     ]
   },
@@ -159,7 +247,7 @@
     "alt": "American crow perched in a conifer",
     "species": "American Crow",
     "binomial": "Corvus brachyrhynchos",
-    "remark": "Everywhere, all the time. <strong>Still worth a plate.</strong>",
+    "remark": "If you're walking around Capitol Hill and you're hear them going off above you, beware of swooping... they can recognize (or misrecognize) people and hold a grudge for years.",
     "facts": [
       {
         "type": "locality",
@@ -171,30 +259,30 @@
       },
       {
         "type": "behavior",
-        "value": "Watching from a conifer, unbothered"
+        "value": "Watching me watch it"
       }
     ]
   },
   {
+    "type": "section",
+    "title": "Birds of Prey"
+  },
+  {
     "type": "bird",
-    "image": "/images/plates/tree-swallow.jpg",
-    "alt": "Tree swallow perched at the entrance of a gourd nest box",
-    "species": "Tree Swallow",
-    "binomial": "Tachycineta bicolor",
-    "remark": "The <strong>blue-green back</strong> only shows in the right light — otherwise it reads as black.",
-    "facts": [
-      {
-        "type": "locality",
-        "value": "Union Bay Natural Area, Seattle"
-      },
-      {
-        "type": "season",
-        "value": "Summer"
-      },
-      {
-        "type": "behavior",
-        "value": "Guarding the entrance to a gourd nest box"
-      }
-    ]
+    "image": "/images/plates/bald-eagle.jpg",
+    "alt": "A bald eagle with spread wings soaring",
+    "species": "Bald Eagle",
+    "binomial": "Haliaeetus leucocephalus",
+    "remark": "The name comes from an old English word, balde, which actually means \"white\".",
+    "facts": []
+  },
+  {
+    "type": "bird",
+    "image": "/images/plates/osprey.jpg",
+    "alt": "Osprey soaring in a blue sky",
+    "species": "Osprey",
+    "binomial": "Pandion haliaetus",
+    "remark": "These bad boys will dive from 130ft at 40 - 50mph.",
+    "facts": []
   }
 ]
