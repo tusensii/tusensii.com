@@ -4,7 +4,7 @@
   --ink:#141311;
   --field:#1D4F2E; /* spruce green — the woods, not a startup accent */
   --rule:#141311;
-  --parchment:#C9B486; /* old-map tan, GridWarden's resting color */
+  --parchment:#C9B486; /* old-map tan, DragonScale's resting color */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -143,26 +143,26 @@ footer a:hover{color:var(--field)}
 .panel.birds>*{position:relative;z-index:1}
 .panel.birds .cta{background:var(--paper);color:var(--ink)}
 .panel.birds{border-right:none}
-.panel.gridwarden{
+.panel.dragonscale{
   grid-column:1/-1;border-right:none;border-top:3px solid var(--rule);
-  background-image:url("/images/site/gridwarden-map.jpg");
+  background-image:url("/images/site/dragonscale-map.jpg");
   background-size:cover;
   background-position:center 45%;
 }
-.panel.gridwarden::before{
+.panel.dragonscale::before{
   content:"";position:absolute;inset:0;z-index:0;
   background:var(--parchment);
   transition:opacity .5s ease;
 }
-.panel.gridwarden:hover::before{opacity:.8}
-.panel.gridwarden>*{position:relative;z-index:1}
-/* borrows GridWarden's own type system: Cinzel for the wordmark, IM Fell English for flavor copy */
-.panel h2.gridwarden-title{
+.panel.dragonscale:hover::before{opacity:.8}
+.panel.dragonscale>*{position:relative;z-index:1}
+/* borrows DragonScale's own type system: Cinzel for the wordmark, IM Fell English for flavor copy */
+.panel h2.dragonscale-title{
   font-family:'Cinzel',Georgia,serif;font-weight:700;
   font-size:clamp(2.3rem,4.8vw,4.2rem);line-height:1.05;
   letter-spacing:.04em;text-transform:none;
 }
-.panel.gridwarden p{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:1.15rem}
+.panel.dragonscale p{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:1.15rem}
 .panel.birds .cta:hover{background:var(--ink);color:var(--paper)}
 
 @media (max-width:760px){
