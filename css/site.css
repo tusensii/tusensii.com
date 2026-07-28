@@ -289,6 +289,5 @@ img.photo{object-fit:cover;display:block;cursor:zoom-in;transition:transform .4s
   body::after{display:none}
   .band,nav,footer,.cta{display:none}
   .plate{opacity:1;transform:none;break-inside:avoid;page-break-inside:avoid}
-  figure::before,figure::after{opacity:.6}
   .lightbox{display:none}
 }
