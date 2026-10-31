@@ -298,7 +298,11 @@ document.getElementById('deploy-btn').addEventListener('click', async () => {
   if (!confirm('This will build, version, and deploy the live site via wrangler. Continue?')) return;
   const status = document.getElementById('status-message');
   status.textContent = 'Deploying... (this may take a minute)';
-  const res = await fetch('/api/deploy', { method: 'POST' });
+  const res = await fetch('/api/deploy', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: '{}',
+  });
   const result = await res.json();
   status.textContent = result.ok ? 'Deployed.' : `Deploy failed at ${result.failedAt}.`;
   console.log(result.output);

@@ -10,6 +10,34 @@ const execFileAsync = promisify(execFile);
 const ROOT = process.cwd();
 const PORT = 4790;
 
+// This server can rewrite site data and run a production deploy, so it must
+// only answer the admin UI it serves. Checking Host defeats DNS rebinding;
+// requiring a same-origin Origin plus a JSON content type on writes defeats
+// cross-site form/fetch posts (text/plain "simple requests" skip CORS).
+const ALLOWED_HOSTS = new Set([`127.0.0.1:${PORT}`, `localhost:${PORT}`]);
+const ALLOWED_ORIGINS = new Set([...ALLOWED_HOSTS].map((h) => `http://${h}`));
+const MAX_BODY_BYTES = 25 * 1024 * 1024; // image uploads arrive as base64 JSON
+
+// Only the admin UI and the public site's own assets are served; dotfiles
+// (.git, .wrangler, .claude) and scripts/docs never are.
+const STATIC_DIRS = ['/admin/', '/css/', '/images/', '/data/', '/birds/', '/about/'];
+const STATIC_FILES = new Set(['/index.html', '/404.html', '/favicon.svg', '/apple-touch-icon.png']);
+
+function isAllowedStaticPath(urlPath) {
+  if (urlPath.split('/').some((seg) => seg.startsWith('.'))) return false;
+  return STATIC_FILES.has(urlPath) || STATIC_DIRS.some((dir) => urlPath.startsWith(dir));
+}
+
+function rejectRequest(req) {
+  if (!ALLOWED_HOSTS.has(req.headers.host || '')) return 'bad host';
+  if (req.method !== 'GET' && req.method !== 'HEAD') {
+    if (!ALLOWED_ORIGINS.has(req.headers.origin || '')) return 'bad origin';
+    const type = (req.headers['content-type'] || '').split(';')[0].trim().toLowerCase();
+    if (type !== 'application/json') return 'bad content type';
+  }
+  return null;
+}
+
 function slugify(text) {
   return text
     .toLowerCase()
@@ -22,7 +50,13 @@ function slugify(text) {
 function readBody(req) {
   return new Promise((resolve, reject) => {
     let data = '';
-    req.on('data', (chunk) => { data += chunk; });
+    req.on('data', (chunk) => {
+      data += chunk;
+      if (data.length > MAX_BODY_BYTES) {
+        reject(new Error('Request body too large'));
+        req.destroy();
+      }
+    });
     req.on('end', () => resolve(data));
     req.on('error', reject);
   });
@@ -44,11 +78,19 @@ function readJson(relPath) {
 }
 
 function serveStatic(req, res) {
-  let urlPath = decodeURIComponent(req.url.split('?')[0]);
+  let urlPath;
+  try {
+    urlPath = decodeURIComponent(req.url.split('?')[0]);
+  } catch {
+    res.writeHead(400); res.end('Bad request'); return;
+  }
   if (urlPath === '/') urlPath = '/admin/index.html';
   const safePath = normalize(urlPath).replace(/^(\.\.[/\\])+/, '');
+  if (!isAllowedStaticPath(safePath)) {
+    res.writeHead(404); res.end('Not found'); return;
+  }
   const filePath = join(ROOT, safePath);
-  if (!filePath.startsWith(ROOT) || !existsSync(filePath) || statSync(filePath).isDirectory()) {
+  if (!filePath.startsWith(ROOT + '/') || !existsSync(filePath) || statSync(filePath).isDirectory()) {
     res.writeHead(404); res.end('Not found'); return;
   }
   const ext = extname(filePath);
@@ -66,6 +108,12 @@ async function runStep(name, command, args) {
 }
 
 const server = createServer(async (req, res) => {
+  const rejection = rejectRequest(req);
+  if (rejection) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end(`Forbidden: ${rejection}`);
+    return;
+  }
   if (req.method === 'GET' && req.url === '/api/data') {
     const items = readJson('data/plates.json');
     const catalog = readJson('data/fact-catalog.json');
