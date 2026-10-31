@@ -66,3 +66,32 @@ test('renderItems falls back to numeric numbering past X', () => {
   const html = renderItems(items, catalog);
   assert.match(html, /No\. 11(?!\w)/);
 });
+
+test('renderBird escapes untrusted fields but keeps bare emphasis tags in remarks', () => {
+  const bird = {
+    type: 'bird',
+    image: '/images/plates/x.jpg',
+    alt: '"><script>alert(1)</script>',
+    species: '<img src=x onerror=alert(1)> Bird',
+    binomial: 'Testus <b onclick=x>birdus</b>',
+    remark: 'The <strong>red bill</strong> <img src=x onerror=alert(1)> & "more"',
+    facts: [{ type: '<i>', value: '<script>x</script>' }],
+  };
+  const html = renderBird(bird, 'I', catalog);
+  assert.doesNotMatch(html, /<script|<img src=x|onerror=alert\(1\)>|<b onclick/);
+  assert.match(html, /<strong>red bill<\/strong>/);
+  assert.match(html, /&lt;img src=x onerror=alert\(1\)&gt; &amp; &quot;more&quot;/);
+  assert.match(html, /alt="&quot;&gt;&lt;script&gt;/);
+});
+
+test('renderBird drops image paths that are not site-relative uploads', () => {
+  for (const image of ['javascript:alert(1)', 'https://evil.example/x.png', '/images/../.git/config', '" onerror="x']) {
+    const html = renderBird({ type: 'bird', image, alt: 'a', species: 'A B', binomial: 'b', remark: 'r', facts: [] }, 'I', catalog);
+    assert.match(html, /<div class="photo"><em>a<\/em><\/div>/, image);
+  }
+});
+
+test('renderSection escapes the title', () => {
+  assert.equal(renderSection({ type: 'section', title: 'Seabirds & <Shorebirds>' }),
+    '  <div class="band"><span>Seabirds &amp; &lt;Shorebirds&gt;</span></div>');
+});
